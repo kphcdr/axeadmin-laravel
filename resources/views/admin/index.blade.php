@@ -1,4 +1,4 @@
-@extends('axe::layout.page')
+@extends('axe.layout.page')
 @section('content')
     <div class="layui-fluid">
         <div class="layui-row layui-col-space15">
@@ -76,7 +76,7 @@
 
                             </div>
                             <div class="layui-table-page">
-                                {{ $list->links("axe::pagination",request()->all()) }}
+                                {{ $list->links("axe.pagination",request()->all()) }}
                             </div>
                         </div>
                     </div>

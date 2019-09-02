@@ -16,8 +16,7 @@ class AxeServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'axe');
-        $this->loadRoutesFrom(__DIR__ . '/../routes/route.php');
+        $this->loadRoutesFrom(base_path("routes/axe.php"));
         $this->registerPublishing();
         $this->registerMiddleware();
     }
@@ -30,10 +29,11 @@ class AxeServiceProvider extends ServiceProvider
     protected function registerPublishing()
     {
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__ . '/../config' => config_path()], "axe-config");
-            $this->publishes([__DIR__ . '/../database/migrations' => database_path('migrations')], 'axe-migrations');
-            $this->publishes([__DIR__ . '/../resources/assets/dist' => public_path('')], 'axe-resource');
-            $this->publishes([__DIR__ . '/../resources/lang' => resource_path('lang')], 'axe-resource');
+            $this->publishes([__DIR__ . "/../routes/axe.php" => base_path("routes/axe.php")], "axe-route");
+            $this->publishes([__DIR__ . "/../config" => config_path()], "axe-config");
+            $this->publishes([__DIR__ . "/../database/migrations" => database_path("migrations")], "axe-migrations");
+            $this->publishes([__DIR__ . "/../resources/assets/dist" => public_path()], "axe-resource");
+            $this->publishes([__DIR__ . "/../resources/views" => resource_path("views/axe")], "axe-views");
         }
 
     }
@@ -58,7 +58,7 @@ class AxeServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/axe.php', 'axe');
+        $this->mergeConfigFrom(__DIR__ . "/../config/axe.php", "axe");
         $this->registerCommand();
     }
 

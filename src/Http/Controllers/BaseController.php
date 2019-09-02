@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class BaseController extends Controller
 {
-    private $viewPrefix = "axe::";
+    private $viewPrefix = "axe.";
 
     protected function vendorJson(bool $ret, $data = null, string $message = "")
     {

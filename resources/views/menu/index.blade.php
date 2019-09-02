@@ -1,4 +1,4 @@
-@extends('axe::layout.page')
+@extends('axe.layout.page')
 @section('content')
 <div class="layui-fluid">
     <div class="layui-row layui-col-space15">

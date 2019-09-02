@@ -1,4 +1,4 @@
-@extends('axe::layout.page')
+@extends('axe.layout.page')
 <?php
 $tplName = '权限组';
 ?>
@@ -73,7 +73,7 @@ $tplName = '权限组';
 
                             </div>
                             <div class="layui-table-page">
-                                {{ $list->links("axe::pagination",request()->all()) }}
+                                {{ $list->links("axe.pagination",request()->all()) }}
                             </div>
                         </div>
                     </div>

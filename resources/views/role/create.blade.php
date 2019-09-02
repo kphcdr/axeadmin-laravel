@@ -1,4 +1,4 @@
-@extends('axe::layout.page')
+@extends('axe.layout.page')
 @section('content')
     <!-- 内容区域 -->
     <div class="layui-fluid">
