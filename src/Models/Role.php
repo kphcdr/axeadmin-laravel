@@ -27,7 +27,7 @@ class Role extends AxeModel
         $method = strtoupper($method);
         foreach ($this->rules as $role) {
             if ($role['method'] == "ALL" || $role['method'] == $method) {
-                $fx = '/^' . str_replace("/","\\/",$role["url"]) . '/i';
+                $fx = '/^' . str_replace("/", "\\/", $role["url"]) . '/i';
                 if (preg_match($fx, $path)) {
                     return true;
                 }

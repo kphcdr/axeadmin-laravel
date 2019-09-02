@@ -4,7 +4,6 @@ namespace Axe\Models;
 
 
 use Axe\Traits\VendorTreeTrait;
-use Illuminate\Support\Collection;
 
 class Menu extends AxeModel
 {
@@ -15,17 +14,17 @@ class Menu extends AxeModel
 
     protected $table = "axe_menus";
 
-    protected $fillable = ["name", "icon", "type", "url", "sort","is_use"];
+    protected $fillable = ["name", "icon", "type", "url", "sort", "is_use"];
 
     public function getAllTree()
     {
-        $menuCollection = Menu::orderBy("parent_id","asc")->orderBy("sort","desc")->get();
+        $menuCollection = Menu::orderBy("parent_id", "asc")->orderBy("sort", "desc")->get();
         return $this->vendorTree($menuCollection);
     }
 
     public function getCanUseTree()
     {
-        $menuCollection = Menu::whereIsUse(1)->orderBy("parent_id","asc")->orderBy("sort","desc")->get();
+        $menuCollection = Menu::whereIsUse(1)->orderBy("parent_id", "asc")->orderBy("sort", "desc")->get();
         return $this->vendorTree($menuCollection);
     }
 

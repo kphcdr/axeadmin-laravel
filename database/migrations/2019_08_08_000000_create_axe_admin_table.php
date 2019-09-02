@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateAxeAdminTable extends Migration
 {
@@ -38,8 +38,8 @@ class CreateAxeAdminTable extends Migration
 
         Schema::create('axe_roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string("name",60);
-            $table->string("code",60);
+            $table->string("name", 60);
+            $table->string("code", 60);
             $table->text("rules");
             $table->timestamps();
             $table->softDeletes();
@@ -47,8 +47,8 @@ class CreateAxeAdminTable extends Migration
 
         Schema::create('axe_groups', function (Blueprint $table) {
             $table->increments('id');
-            $table->string("name",60);
-            $table->string("desc",255);
+            $table->string("name", 60);
+            $table->string("desc", 255);
             $table->timestamps();
             $table->softDeletes();
         });

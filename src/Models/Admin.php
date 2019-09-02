@@ -10,7 +10,8 @@ class Admin extends AxeModel
 {
     use SoftDeletes;
     protected $table = "axe_admins";
-    protected $fillable = ["name","password","is_use","group_id"];
+    protected $fillable = ["name", "password", "is_use", "group_id"];
+
     public function group()
     {
         return $this->belongsTo(Group::class);
@@ -29,8 +30,8 @@ class Admin extends AxeModel
     public function doLoginSuccess()
     {
         session([
-            "axe_id"=>$this->id,
-            "axe_name"=>$this->name
+            "axe_id"   => $this->id,
+            "axe_name" => $this->name
         ]);
     }
 }

@@ -16,19 +16,19 @@ class LoginController extends BaseController
 
     public function postLogin(Request $request)
     {
-        $this->validate($request,[
-            "name"=>"required",
-            "password"=>"required",
+        $this->validate($request, [
+            "name"     => "required",
+            "password" => "required",
         ]);
         $admin = Admin::whereName($request->input("name"))->first();
-        if($admin) {
-            if($admin->checkPassword($request->input("password"))) {
-                if($admin->is_use == 0) {
-                    return $this->vendorJson(false,null,"账号已禁用");
+        if ($admin) {
+            if ($admin->checkPassword($request->input("password"))) {
+                if ($admin->is_use == 0) {
+                    return $this->vendorJson(false, null, "账号已禁用");
                 }
                 AdminLoginSuccessEvent::dispatch($admin);
 
-                return $this->vendorJson(true,null,"登录成功");
+                return $this->vendorJson(true, null, "登录成功");
             } else {
                 return $this->vendorJson(false, null, "账号密码错误");
             }
@@ -38,7 +38,7 @@ class LoginController extends BaseController
 
     public function getLogout()
     {
-        Session::flush();
+        Session::forget("axe_id");
 
         return redirect(axe_url("login"));
     }

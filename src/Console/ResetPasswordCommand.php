@@ -43,7 +43,7 @@ class ResetPasswordCommand extends Command
         $admin = Admin::whereName($name)->first();
         if (is_null($admin)) {
             $this->error("not found {$name}");
-            return ;
+            return;
         }
 
         $password = $this->ask("please input new password");

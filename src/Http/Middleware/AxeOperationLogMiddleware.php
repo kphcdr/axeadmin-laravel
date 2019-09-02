@@ -5,11 +5,12 @@ namespace Axe\Http\Middleware;
 
 
 use Axe\Models\OperationLog;
+use Closure;
 use Illuminate\Http\Request;
 
 class AxeOperationLogMiddleware
 {
-    public function handle(Request $request, \Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         $admin = $request->attributes->get("admin");
         $method = $request->method();
