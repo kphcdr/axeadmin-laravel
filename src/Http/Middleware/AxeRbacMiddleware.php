@@ -10,8 +10,8 @@ class AxeRbacMiddleware
 {
     public function handle(Request $request, \Closure $next)
     {
-        $axe = $request->attributes->get("axe");
-        $myRole = $axe->group->roles;
+        $admin = $request->attributes->get("admin");
+        $myRole = $admin->group->roles;
 
         $prefix = config("axe.url");
         $method = $request->method();

@@ -13,7 +13,7 @@ class AxeAuthMiddleware
     {
         if ($axeId = session("axe_id")) {
             $axe = Axe::findOrFail($axeId);
-            $request->attributes->set("axe",$axe);
+            $request->attributes->set("admin",$axe);
             return $next($request);
         } else {
             return redirect(axe_url("login"));

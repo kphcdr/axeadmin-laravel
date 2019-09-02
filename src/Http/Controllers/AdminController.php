@@ -60,6 +60,11 @@ class AdminController extends AuthController
 
     public function destroy($id)
     {
+        $admin = $this->getAdmin();
+
+        if($id == $admin->id) {
+            return $this->vendorJson(false,null,"你不能删除自己的账号");
+        }
         return parent::destroy($id);
     }
 }

@@ -3,6 +3,8 @@
 namespace Axe\Http\Controllers;
 
 
+use App\User;
+use Axe\Models\Admin;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
@@ -23,6 +25,13 @@ abstract class AuthController extends BaseController
         ]);
     }
 
+    /**
+     * @return Admin
+     */
+    public function getAdmin()
+    {
+        return request()->attributes->get("admin");
+    }
     /**
      * @return Model
      */
