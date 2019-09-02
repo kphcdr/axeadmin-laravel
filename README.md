@@ -25,3 +25,8 @@ axeadmin 是一套用于laravel的扩展，可以使你快速搭建一个可用�
 axeadmin 使用了  [layuiAdmin](https://www.layui.com/admin/)
 
 axeadmin 借鉴了  [laravel-admin](https://github.com/z-song/laravel-admin)
+
+# 部分截图
+![](http://static-axe.kphcdr.com/1.png)
+![](http://static-axe.kphcdr.com/2.png)
+![](http://static-axe.kphcdr.com/3.png)
