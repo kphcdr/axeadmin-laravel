@@ -1,10 +1,15 @@
 {
-  "name": "kphcdr/axeadmin",
-  "description": "axeadmin",
+  "name": "kphcdr/axeadmin-laravel",
+  "description": "axeadmin-laravel",
   "type": "admin",
-  "keywords": ["laravel", "admin", "grid", "form"],
+  "keywords": [
+    "laravel",
+    "admin",
+    "rbac",
+    "axe"
+  ],
   "require": {
-    "php": ">=7.1.0",
+    "php": ">=7.0.0",
     "laravel/framework": "~5.5"
   },
   "require-dev": {
@@ -24,5 +29,12 @@
     "classmap": [
       "tests/TestCase.php"
     ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Axe\\AxeServiceProvider"
+      ]
+    }
   }
 }
