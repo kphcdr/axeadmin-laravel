@@ -1,0 +1,28 @@
+{
+  "name": "kphcdr/axeadmin",
+  "description": "axeadmin",
+  "type": "admin",
+  "keywords": ["laravel", "admin", "grid", "form"],
+  "require": {
+    "php": ">=7.1.0",
+    "laravel/framework": "~5.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6.0 || ~8.0",
+    "laravel/browser-kit-testing": "^5.0",
+    "laravel/laravel": "~5.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Axe\\": "src/"
+    },
+    "files": [
+      "src/functions.php"
+    ]
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  }
+}
