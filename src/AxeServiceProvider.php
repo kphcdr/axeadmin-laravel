@@ -16,10 +16,9 @@ class AxeServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        $this->loadRoutesFrom(__DIR__ . '/../routes/route.php');
         $this->registerPublishing();
         $this->registerMiddleware();
-
-        $this->loadRoutesFrom(base_path("routes/axe.php"));
     }
 
     /**
