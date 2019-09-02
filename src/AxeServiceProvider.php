@@ -16,9 +16,10 @@ class AxeServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->loadRoutesFrom(base_path("routes/axe.php"));
         $this->registerPublishing();
         $this->registerMiddleware();
+
+        $this->loadRoutesFrom(base_path("routes/axe.php"));
     }
 
     /**
@@ -29,7 +30,6 @@ class AxeServiceProvider extends ServiceProvider
     protected function registerPublishing()
     {
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__ . "/../routes/axe.php" => base_path("routes/axe.php")], "axe-route");
             $this->publishes([__DIR__ . "/../config" => config_path()], "axe-config");
             $this->publishes([__DIR__ . "/../database/migrations" => database_path("migrations")], "axe-migrations");
             $this->publishes([__DIR__ . "/../resources/assets/dist" => public_path()], "axe-resource");
@@ -54,6 +54,7 @@ class AxeServiceProvider extends ServiceProvider
             "axe.rbac",
             "axe.operation_log"
         ]);
+
     }
 
     public function register()
