@@ -3,11 +3,6 @@ language: php
 php:
   - 7.2
 
-matrix:
-  fast_finish: true
-  allow_failures:
-    - php: hhvm
-
 sudo: false
 
 services:
@@ -15,8 +10,7 @@ services:
 
 before_script:
   - mysql -e 'create database if not exists axe_test;'
-  - travis_retry composer self-update
-  - travis_retry composer install --no-interaction
+  - php artisan serve &
 
 script:
   - phpunit
