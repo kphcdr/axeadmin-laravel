@@ -69,8 +69,9 @@
                 </div>
 
                 <div class="links">
-                    <a href="###">文档</a>
-                    <a href="###">捐赠</a>
+                    <a href="https://github.com/kphcdr/axeadmin-laravel/blob/master/QA.md">常见问题</a>
+                    <a href="https://github.com/kphcdr/axeadmin-laravel">项目主页</a>
+                    <a href="https://github.com/kphcdr/axeadmin-laravel/issues">捐赠我们</a>
                 </div>
             </div>
         </div>

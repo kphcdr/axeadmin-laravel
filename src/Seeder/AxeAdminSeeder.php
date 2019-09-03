@@ -123,13 +123,48 @@ class AxeAdminSeeder extends Seeder
         [
             "id"        => 10,
             "name"      => "帮助",
-            "url"       => "http://godoc.kphcdr.com/web/#/222?page_id=181",
-            "type"      => Menu::TYPE_LINK,
+            "type"      => Menu::TYPE_DIR,
             "is_use"    => 1,
             "sort"      => 0,
             "icon"      => "layui-icon-help",
             "parent_id" => 0
-        ]
+        ],
+        [
+            "name"      => "项目主页",
+            "url"       => "https://github.com/kphcdr/axeadmin-laravel",
+            "type"      => Menu::TYPE_LINK,
+            "is_use"    => 1,
+            "sort"      => 0,
+            "icon"      => "layui-icon-home",
+            "parent_id" => 10
+        ],
+        [
+            "name"      => "常见问题",
+            "url"       => "https://github.com/kphcdr/axeadmin-laravel/blob/master/QA.md",
+            "type"      => Menu::TYPE_LINK,
+            "is_use"    => 1,
+            "sort"      => 0,
+            "icon"      => "layui-icon-help",
+            "parent_id" => 10
+        ],
+        [
+            "name"      => "问题与建议",
+            "url"       => "https://github.com/kphcdr/axeadmin-laravel/issues",
+            "type"      => Menu::TYPE_LINK,
+            "is_use"    => 1,
+            "sort"      => 0,
+            "icon"      => "layui-icon-help",
+            "parent_id" => 10
+        ],
+        [
+            "name"      => "捐赠我们",
+            "url"       => "https://github.com/kphcdr/axeadmin-laravel/issues",
+            "type"      => Menu::TYPE_LINK,
+            "is_use"    => 1,
+            "sort"      => 0,
+            "icon"      => "layui-icon-help",
+            "parent_id" => 10
+        ],
     ];
 
     /**
