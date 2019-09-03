@@ -39,9 +39,9 @@ class InstallAxeCommand extends Command
      */
     public function handle()
     {
-        $this->info("you will install axe-admin");
-        $this->call("vendor:publish", ["--provider" => AxeServiceProvider::class]);
-        $this->call("migrate");
-        $this->call("db:seed", ["--class" => AxeAdminSeeder::class]);
+        $this->info('you will install axe-admin');
+        $this->call('vendor:publish', ['--provider' => AxeServiceProvider::class]);
+        $this->call('migrate');
+        $this->call('db:seed', ['--class' => AxeAdminSeeder::class]);
     }
 }

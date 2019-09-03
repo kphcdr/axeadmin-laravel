@@ -2,7 +2,6 @@
 
 namespace Axe\Http\Controllers;
 
-
 use Axe\Models\Admin;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -20,8 +19,9 @@ abstract class AuthController extends BaseController
     public function index()
     {
         $paginate = $this->getModel()->newQuery()->paginate();
-        return $this->vendorView($this->viewGroup . ".index", [
-            "list" => $paginate
+
+        return $this->vendorView($this->viewGroup.'.index', [
+            'list' => $paginate,
         ]);
     }
 
@@ -40,7 +40,7 @@ abstract class AuthController extends BaseController
      */
     public function getAdmin()
     {
-        return request()->attributes->get("admin");
+        return request()->attributes->get('admin');
     }
 
     /**
@@ -50,45 +50,48 @@ abstract class AuthController extends BaseController
      */
     public function create()
     {
-        return $this->vendorView($this->viewGroup . ".create");
+        return $this->vendorView($this->viewGroup.'.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
+     *
      * @return Response
      */
     public function store(Request $request)
     {
         $model = $this->getModel();
         $model->fill($request->only($model->getFillable()))->save();
-        return $this->vendorJson($model->exists, null, "创建成功");
+
+        return $this->vendorJson($model->exists, null, '创建成功');
     }
 
     /**
      * Display the specified resource.
      *
      * @param int $id
+     *
      * @return Response
      */
     public function show($id)
     {
-
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param int $id
+     *
      * @return Response
      */
     public function edit($id)
     {
         $model = $this->getModel()->findOrFail($id);
 
-        return $this->vendorView($this->viewGroup . ".edit", [
-            "data" => $model
+        return $this->vendorView($this->viewGroup.'.edit', [
+            'data' => $model,
         ]);
     }
 
@@ -96,20 +99,23 @@ abstract class AuthController extends BaseController
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param int $id
+     * @param int     $id
+     *
      * @return Response
      */
     public function update(Request $request, $id)
     {
         $model = $this->getModel()->findOrFail($id);
         $model->fill($request->only($model->getFillable()))->save();
-        return $this->vendorJson($model->exists, null, "修改成功");
+
+        return $this->vendorJson($model->exists, null, '修改成功');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param int $id
+     *
      * @return Response
      */
     public function destroy($id)
@@ -118,9 +124,9 @@ abstract class AuthController extends BaseController
         if ($model) {
             $model->delete();
 
-            return $this->vendorJson(true, $model, "操作完成");
+            return $this->vendorJson(true, $model, '操作完成');
         }
 
-        return $this->vendorJson(false, $model, "删除失败");
+        return $this->vendorJson(false, $model, '删除失败');
     }
 }

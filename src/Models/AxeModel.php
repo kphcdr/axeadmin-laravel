@@ -5,7 +5,6 @@ namespace Axe\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
-
 class AxeModel extends Model
 {
     protected $guarded = [];
@@ -16,8 +15,7 @@ class AxeModel extends Model
         parent::boot();
 
         static::addGlobalScope('default-orderBy', function (Builder $builder) {
-            $builder->orderBy("id", "desc");
+            $builder->orderBy('id', 'desc');
         });
     }
 }
-
