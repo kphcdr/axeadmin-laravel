@@ -20,10 +20,10 @@
         <env name="APP_ENV" value="local"/>
         <env name="APP_DEBUG" value="true"/>
         <env name="APP_KEY" value="base64:+rqBLSuVlJPil1qMtm1JJtS485+7LAws2/27HRW4Xgs="/>
-        <env name="DB_HOST" value="127.0.0.1"/>
+        <env name="DB_HOST" value="localhost"/>
         <env name="DB_PORT" value="3306"/>
         <env name="DB_DATABASE" value="axe_test"/>
         <env name="DB_USERNAME" value="root"/>
-        <env name="DB_PASSWORD" value="root"/>
+        <env name="DB_PASSWORD" value=""/>
     </php>
 </phpunit>
