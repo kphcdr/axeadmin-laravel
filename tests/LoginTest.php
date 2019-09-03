@@ -8,4 +8,10 @@ class LoginTest extends TestCase
             ->see("LAY-user-login")
             ->see(csrf_token());
     }
+
+    public function testGetIndex()
+    {
+        $this->visit("/")
+            ->see("Laravel");
+    }
 }
