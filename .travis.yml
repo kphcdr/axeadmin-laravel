@@ -13,9 +13,11 @@ services:
 
 before_script:
   - mysql -e 'create database if not exists axe_test;'
-  - composer update
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:8000 &
-  - php artisan serve &
+  - travis_wait travis_retry composer self-update
+
+install:
+  - travis_retry composer install --no-interaction --prefer-dist
 
 script:
+  - pwd
   - vendor/bin/phpunit
