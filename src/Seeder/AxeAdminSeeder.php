@@ -158,7 +158,7 @@ class AxeAdminSeeder extends Seeder
         ],
         [
             'name'      => '捐赠我们',
-            'url'       => 'https://github.com/kphcdr/axeadmin-laravel/issues',
+            'url'       => 'https://github.com/kphcdr/axeadmin-laravel/blob/master/DONATE.md',
             'type'      => Menu::TYPE_LINK,
             'is_use'    => 1,
             'sort'      => 0,
