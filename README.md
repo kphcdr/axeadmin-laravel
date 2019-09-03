@@ -1,11 +1,14 @@
 # axeadmin-laravel
+
+[![StyleCI](https://github.styleci.io/repos/205770921/shield?branch=master)](https://github.styleci.io/repos/205770921)
+
 axeadmin 是一套用于laravel的扩展，可以使你快速搭建一个可用的后台。
 
 # 要求
 
 `laravel` >= 5.5
 
-`mysql`
+laravel支持的数据库
 
 
 # 安装
