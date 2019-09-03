@@ -4,14 +4,14 @@ class LoginTest extends TestCase
 {
     public function testGetLogin()
     {
-        $this->visit('/axe/login')
+        $this->visit('axe/login')
             ->see("LAY-user-login")
             ->see(csrf_token());
     }
 
     public function testGetIndex()
     {
-        $this->visit("/")
+        $this->visit("")
             ->see("Laravel");
     }
 }
