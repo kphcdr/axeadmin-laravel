@@ -10,10 +10,7 @@ services:
 
 before_script:
   - mysql -e 'create database if not exists axe_test;'
-  - composer create-project laravel/laravel
-  - cd laravel
-  - composer require kphcdr/axeadmin-laravel
-  - php artisan axe:install
-  - php artisan serve &
+  - composer update
+
 script:
   - vendor/bin/phpunit
