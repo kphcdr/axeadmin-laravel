@@ -2,6 +2,14 @@
   "name": "kphcdr/axeadmin-laravel",
   "description": "axeadmin-laravel",
   "type": "admin",
+  "license": "MIT",
+  "homepage": "https://github.com/kphcdr/axeadmin-laravel",
+  "authors": [
+    {
+      "name": "kphcdr",
+      "email": "kphcdr@gmail.com"
+    }
+  ],
   "keywords": [
     "laravel",
     "admin",
@@ -14,8 +22,9 @@
   },
   "require-dev": {
     "phpunit/phpunit": "~6.0 || ~8.0",
-    "laravel/browser-kit-testing": "^5.0",
-    "laravel/laravel": "~5.5"
+    "laravel/browser-kit-testing": "^2.0",
+    "laravel/laravel": "~5.5",
+    "symfony/css-selector": "~3.1"
   },
   "autoload": {
     "psr-4": {
@@ -29,6 +38,9 @@
     "classmap": [
       "tests/TestCase.php"
     ]
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit"
   },
   "extra": {
     "laravel": {

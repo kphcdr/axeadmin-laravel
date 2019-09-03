@@ -1,7 +1,6 @@
 language: php
 
 php:
-  - 7.1
   - 7.2
 
 sudo: false
@@ -16,5 +15,6 @@ before_script:
   - mysql -e 'create database if not exists axe_test;'
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction
+
 script:
-  - ./vendor/bin/phpunit
+  - composer test
