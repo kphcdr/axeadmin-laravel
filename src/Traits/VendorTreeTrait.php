@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Axe\Traits;
-
 
 use Illuminate\Support\Collection;
 
@@ -14,8 +12,8 @@ trait VendorTreeTrait
         foreach ($collection as $menu) {
             if ($menu->parent_id == 0) {
                 $tree[$menu->id] = [
-                    "model" => $menu,
-                    "child" => []
+                    'model' => $menu,
+                    'child' => [],
                 ];
             } else {
                 $tree[$menu->parent_id]['child'][] = $menu;

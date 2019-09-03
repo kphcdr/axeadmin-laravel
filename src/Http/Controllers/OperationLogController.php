@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class OperationLogController extends AuthController
 {
-    protected $viewGroup = "operation_log";
+    protected $viewGroup = 'operation_log';
 
     public function getModel(): Model
     {

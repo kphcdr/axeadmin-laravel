@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Axe\Traits;
-
 
 trait HasNameTrait
 {

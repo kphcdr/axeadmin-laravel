@@ -2,15 +2,14 @@
 
 namespace Axe\Models;
 
-
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Hash;
 
 class Admin extends AxeModel
 {
     use SoftDeletes;
-    protected $table = "axe_admins";
-    protected $fillable = ["name", "password", "is_use", "group_id"];
+    protected $table = 'axe_admins';
+    protected $fillable = ['name', 'password', 'is_use', 'group_id'];
 
     public function group()
     {
@@ -30,8 +29,8 @@ class Admin extends AxeModel
     public function doLoginSuccess()
     {
         session([
-            "axe_id"   => $this->id,
-            "axe_name" => $this->name
+            'axe_id'   => $this->id,
+            'axe_name' => $this->name,
         ]);
     }
 }

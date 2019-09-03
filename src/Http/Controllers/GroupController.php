@@ -9,30 +9,30 @@ use Illuminate\Http\Request;
 
 class GroupController extends AuthController
 {
-    protected $viewGroup = "group";
+    protected $viewGroup = 'group';
 
     public function store(Request $request)
     {
         $this->validate($request, [
-            "name"  => "required",
-            "desc"  => "",
-            "roles" => "array"
+            'name'  => 'required',
+            'desc'  => '',
+            'roles' => 'array',
         ]);
 
         $model = $this->getModel()->create([
-            "name" => $request->input("name"),
-            "desc" => $request->input("desc"),
+            'name' => $request->input('name'),
+            'desc' => $request->input('desc'),
         ]);
 
-        $roles = $request->input("roles", []);
+        $roles = $request->input('roles', []);
         foreach ($roles as $role) {
             GroupRole::create([
-                "group_id" => $model->id,
-                "role_id"  => $role
+                'group_id' => $model->id,
+                'role_id'  => $role,
             ]);
         }
 
-        return $this->vendorJson(true, $model, "操作成功");
+        return $this->vendorJson(true, $model, '操作成功');
     }
 
     /**
@@ -46,35 +46,36 @@ class GroupController extends AuthController
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            "name"  => "required",
-            "desc"  => "",
-            "roles" => "array"
+            'name'  => 'required',
+            'desc'  => '',
+            'roles' => 'array',
         ]);
         /** @var Group $model */
         $model = $this->getModel()->findOrFail($id);
         $model->update([
-            "name" => $request->input("name"),
-            "desc" => $request->input("desc"),
+            'name' => $request->input('name'),
+            'desc' => $request->input('desc'),
         ]);
 
-        $roles = $request->input("roles", []);
+        $roles = $request->input('roles', []);
         GroupRole::whereGroupId($model->id)->delete();
         foreach ($roles as $role) {
             GroupRole::create([
-                "group_id" => $model->id,
-                "role_id"  => $role
+                'group_id' => $model->id,
+                'role_id'  => $role,
             ]);
         }
 
-        return $this->vendorJson(true, $model, "操作成功");
+        return $this->vendorJson(true, $model, '操作成功');
     }
 
     public function destroy($id)
     {
         $model = $this->getModel()->findOrFail($id);
         if ($model->admin) {
-            return $this->vendorJson(false, null, "角色下还有管理员，禁止删除");
+            return $this->vendorJson(false, null, '角色下还有管理员，禁止删除');
         }
+
         return parent::destroy($id);
     }
 }

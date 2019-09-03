@@ -38,19 +38,20 @@ class ResetPasswordCommand extends Command
      */
     public function handle()
     {
-        $name = $this->ask("please input your admin name?");
+        $name = $this->ask('please input your admin name?');
 
         $admin = Admin::whereName($name)->first();
         if (is_null($admin)) {
             $this->error("not found {$name}");
+
             return;
         }
 
-        $password = $this->ask("please input new password");
+        $password = $this->ask('please input new password');
 
         $admin->password = $password;
         $admin->save();
 
-        $this->info("reset password success!");
+        $this->info('reset password success!');
     }
 }
