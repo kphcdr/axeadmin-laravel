@@ -1,6 +1,10 @@
 # axeadmin-laravel
 
 [![StyleCI](https://github.styleci.io/repos/205770921/shield?branch=master)](https://github.styleci.io/repos/205770921)
+[![Latest Stable Version](https://poser.pugx.org/kphcdr/axeadmin-laravel/v/stable)](https://packagist.org/packages/kphcdr/axeadmin-laravel)
+[![Total Downloads](https://poser.pugx.org/kphcdr/axeadmin-laravel/downloads)](https://packagist.org/packages/kphcdr/axeadmin-laravel)
+[![Latest Unstable Version](https://poser.pugx.org/kphcdr/axeadmin-laravel/v/unstable)](https://packagist.org/packages/kphcdr/axeadmin-laravel)
+[![License](https://poser.pugx.org/kphcdr/axeadmin-laravel/license)](https://packagist.org/packages/kphcdr/axeadmin-laravel)
 
 axeadmin 是一套用于laravel的扩展，可以使你快速搭建一个可用的后台。
 
