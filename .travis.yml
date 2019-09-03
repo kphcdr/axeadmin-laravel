@@ -1,23 +1,20 @@
 language: php
 
 php:
+  - 7.1
   - 7.2
 
 sudo: false
 
-addone:
-  chrome: stable
+matrix:
+  fast_finish: true
 
 services:
   - mysql
 
 before_script:
   - mysql -e 'create database if not exists axe_test;'
-  - travis_wait travis_retry composer self-update
-
-install:
-  - travis_retry composer install --no-interaction --prefer-dist
-
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction
 script:
-  - pwd
-  - vendor/bin/phpunit
+  - ./vendor/bin/phpunit
