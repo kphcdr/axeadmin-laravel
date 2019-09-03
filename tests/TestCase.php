@@ -15,7 +15,7 @@ class TestCase extends BaseCase
         return $app;
     }
 
-    public function setUp() :void
+    public function setUp()
     {
         parent::setUp();
 
@@ -29,7 +29,7 @@ class TestCase extends BaseCase
         $this->artisan('axe:install');
     }
 
-    public function tearDown() :void
+    public function tearDown()
     {
         $this->artisan('migrate:rollback');
 
